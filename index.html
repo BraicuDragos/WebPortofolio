@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dragoș-Constantin Braicu | Web Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="circuit-bg text-slate-100">
+    <div class="relative z-10">
+      <header class="max-w-6xl mx-auto px-6 pt-12 pb-16 lg:pt-16">
+        <div class="grid gap-10 lg:grid-cols-[220px,1fr] items-center">
+          <div class="profile-photo">
+            <span class="mono text-xs uppercase tracking-[0.35em]">Photo</span>
+          </div>
+          <div class="space-y-4">
+            <p class="mono text-xs uppercase tracking-[0.4em] text-sky-300">Web Portfolio</p>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold text-white">
+              Dragoș-Constantin Braicu
+            </h1>
+            <p class="text-lg text-slate-300">
+              Student Technical Intern at NXP Semiconductors - Automotive Embedded Systems
+            </p>
+            <p class="text-slate-400 max-w-2xl">
+              Disciplined and productivity-driven engineering student. Passionate about Arduino,
+              collaborative teamwork, and deeply understanding the inner workings of embedded
+              systems and technology.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <span class="chip mono">Embedded Systems</span>
+              <span class="chip mono">Arduino</span>
+              <span class="chip mono">Automotive</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="max-w-6xl mx-auto px-6 pb-16 space-y-12">
+        <section class="grid gap-6 md:grid-cols-2">
+          <div class="panel p-6 space-y-3">
+            <h2 class="section-title">Experience</h2>
+            <div class="space-y-2">
+              <p class="text-lg font-semibold text-white">Student Technical Intern</p>
+              <p class="text-slate-300">NXP Semiconductors</p>
+              <p class="mono text-xs uppercase tracking-[0.3em] text-slate-400">
+                Jan 2026 - Present
+              </p>
+            </div>
+          </div>
+          <div class="panel p-6 space-y-3">
+            <h2 class="section-title">Education</h2>
+            <div class="space-y-2">
+              <p class="text-lg font-semibold text-white">
+                Faculty of Engineering, Lucian Blaga University of Sibiu
+              </p>
+              <p class="mono text-xs uppercase tracking-[0.3em] text-slate-400">2024 - 2028</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel p-6">
+          <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div class="space-y-2">
+              <h2 class="section-title">Projects</h2>
+              <p class="text-slate-400 text-sm">
+                Repositories fetched live from GitHub (public and also private repos).
+              </p>
+            </div>
+            <div class="mono text-xs uppercase tracking-[0.35em] text-sky-300">
+              Live Data
+            </div>
+          </div>
+
+          <div id="loadingState" class="mt-6 flex items-center gap-3 text-slate-300">
+            <div class="spinner"></div>
+            <span>Loading projects...</span>
+          </div>
+
+          <div
+            id="errorState"
+            class="mt-6 hidden rounded-lg border border-rose-500/30 bg-rose-500/10 px-4 py-3"
+          >
+            <p class="text-sm text-rose-100">Oops! We could not load the projects right now.</p>
+          </div>
+
+          <p id="emptyState" class="mt-6 hidden text-sm text-slate-400">
+            There are no projects to show yet.
+          </p>
+
+          <div
+            id="repositoriesContainer"
+            class="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-3"
+          ></div>
+
+          <div class="mt-8 flex justify-center">
+            <button
+              id="loadMoreButton"
+              class="hidden rounded-full border border-sky-400/40 px-6 py-2 text-sm font-semibold text-sky-200 transition hover:border-sky-300 hover:text-white"
+              type="button"
+            >
+              Load More
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <footer class="max-w-6xl mx-auto px-6 pb-10 text-xs text-slate-500">
+        <p class="mono">Built for a university semester project - 2026</p>
+      </footer>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
