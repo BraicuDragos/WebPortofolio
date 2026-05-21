@@ -1,10 +1,10 @@
 # WebPortofolio
 
-Portfolio web dinamic pentru proiectul de semestru, construit cu HTML5, Tailwind CSS (CDN) și JavaScript modern. Interfața are un aspect tech/dark cu un fundal inspirat de circuite, iar proiectele sunt încărcate automat din GitHub prin API.
+Portfolio web dinamic pentru proiectul de semestru, construit cu HTML5, CSS și JavaScript modern. Interfața are un aspect tech/dark cu un fundal inspirat de circuite, iar proiectele sunt încărcate automat din GitHub prin API.
 
 ## Structura proiectului
 
-- `index.html` - structura principală, layout responsive și componente Tailwind.
+- `index.html` - structura principală și layout responsive.
 - `style.css` - stiluri custom și fundalul tip circuit.
 - `app.js` - fetch din GitHub API, randare carduri, loading/error state, paginare.
 - `config.js` - token GitHub (fine-grained PAT) pentru acces la repo-uri private.
@@ -42,9 +42,9 @@ export const GITHUB_TOKEN = "github_pat_xxx";
 ## Tehnologii folosite
 
 - HTML5
-- Tailwind CSS (CDN)
+- CSS custom (fără framework)
 - Vanilla JavaScript (ES6+)
-- Custom CSS (background animat tip circuit)
+- Background animat tip circuit
 
 ## Deploy (GitHub Pages / Vercel)
 
