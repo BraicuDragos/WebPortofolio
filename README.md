@@ -1,64 +1,54 @@
 # WebPortofolio
+Portfolio web dinamic pentru proiectul de semestru la materia Programare Web. Interfata are un aspect tech/dark cu fundal inspirat de circuite, iar proiectele sunt incarcate automat din GitHub prin API.
 
-Portfolio web dinamic pentru proiectul de semestru, construit cu HTML5, CSS și JavaScript modern. Interfața are un aspect tech/dark cu un fundal inspirat de circuite, iar proiectele sunt încărcate automat din GitHub prin API.
+## Functionalitati
+- Header de prezentare cu imagine de profil si tag-uri.
+- Sectiuni pentru experienta si educatie.
+- Lista de proiecte incarcata din GitHub, cu paginare si stari de incarcare/eroare.
 
 ## Structura proiectului
-
-- `index.html` - structura principală și layout responsive.
-- `style.css` - stiluri custom și fundalul tip circuit.
-- `app.js` - fetch din GitHub API, randare carduri, loading/error state, paginare.
+- `index.html` - structura paginii si layout responsive.
+- `style.css` - stiluri custom si fundalul tip circuit.
+- `app.js` - logica de fetch din GitHub API, randare carduri, paginare.
 - `config.js` - token GitHub (fine-grained PAT) pentru acces la repo-uri private.
-- `README.md` - documentație.
+- `README.md` - documentatie.
 
-## Rulare locală
+## Cerinte
+- Browser modern (Chrome/Edge/Firefox).
+- Server local pentru a rula ES Modules (nu merge prin `file://`).
 
-> Important: fiind ES Modules, proiectul trebuie servit printr-un server local, nu prin `file://`.
-
-1. Clonează repository-ul.
-2. Dacă vrei să vezi repo-uri private, configurează token-ul (vezi secțiunea de mai jos).
-3. Pornește un server local:
-	- VS Code: folosește extensia Live Server.
-	- Python: `python -m http.server 5500`
-4. Deschide în browser `http://localhost:5500`.
+## Instalare locala
+1. Cloneaza repository-ul.
+2. (Optional) Configureaza token-ul GitHub pentru repo-uri private (vezi sectiunea de mai jos).
+3. Porneste un server local:
+   - VS Code: extensia Live Server.
+   - Python: `python -m http.server 5500`
+4. Deschide in browser `http://localhost:5500`.
 
 ## Configurare GitHub Token (Fine-grained PAT)
-
-Pentru a vedea și repo-urile private sau colaborate, ai nevoie de un **Fine-grained Personal Access Token**.
-
-1. Mergi pe GitHub -> **Settings** -> **Developer settings** -> **Personal access tokens** -> **Fine-grained tokens**.
-2. Click **Generate new token**.
-3. Alege **Repository access**: `All repositories` sau selectează explicit repo-urile dorite.
-4. Permisiuni minime necesare:
-	- **Contents: Read**
-	- **Metadata: Read**
-5. Copiază token-ul generat și adaugă-l în `config.js`:
-
-```js
-export const GITHUB_TOKEN = "github_pat_xxx";
-```
-
-> Notă: token-ul este vizibil în browser (client-side). Nu publica token-ul în repo-uri publice.
+Pentru a vedea si repo-urile private sau colaborate, ai nevoie de un **Fine-grained Personal Access Token**.
+1. GitHub -> **Settings** -> **Developer settings** -> **Personal access tokens** -> **Fine-grained tokens**.
+2. **Generate new token**.
+3. **Repository access**: `All repositories` sau selecteaza repo-urile dorite.
+4. Permisiuni minime:
+   - **Contents: Read**
+   - **Metadata: Read**
+5. Creeaza `config.js`: export const GITHUB_TOKEN = "github_pat_xxx";
 
 ## Tehnologii folosite
-
 - HTML5
-- CSS custom (fără framework)
-- Vanilla JavaScript (ES6+)
-- Background animat tip circuit
+- Tailwind CSS (CDN)
+- CSS custom
+- JavaScript (ES6+)
 
-## Deploy (GitHub Pages / Vercel)
+## Deploy (GitHub Pages)
+1. Da push proiectului pe GitHub.
+2. In repo -> **Settings** -> **Pages**.
+3. **Deploy from branch** -> `main` -> `/ (root)`.
+4. Salveaza si asteapta URL-ul generat.
 
-### GitHub Pages
-1. Împinge proiectul pe GitHub.
-2. În repo -> **Settings** -> **Pages**.
-3. Selectează **Deploy from branch** -> `main` -> `/ (root)`.
-4. Salvează și așteaptă URL-ul generat.
+## Observatii
+- Pentru GitHub Pages, nu pastra token-ul in codul public.
+- Daca vrei doar repo-uri publice, poti elimina token-ul.
 
-### Vercel
-1. Conectează contul GitHub la Vercel.
-2. Importă repository-ul.
-3. Deploy (nu sunt necesare setări speciale pentru un site static).
-
----
-
-Creat pentru un proiect universitar - 2026.
+Creat pentru proiect universitar - 2026.
