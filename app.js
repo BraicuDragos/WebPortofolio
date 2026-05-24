@@ -7,6 +7,7 @@ const REPOSITORIES_PER_BATCH = 6;
 const elements = {
   container: document.getElementById("repositoriesContainer"),
   loadMore: document.getElementById("loadMoreButton"),
+  showLess: document.getElementById("showLessButton"),
   loading: document.getElementById("loadingState"),
   error: document.getElementById("errorState"),
   empty: document.getElementById("emptyState"),
@@ -79,6 +80,13 @@ function renderNextBatch() {
 
   show(elements.empty, state.all.length === 0);
   show(elements.loadMore, state.shown < state.all.length);
+  show(elements.showLess, state.shown > REPOSITORIES_PER_BATCH);
+}
+
+function renderInitialBatch() {
+  state.shown = 0;
+  elements.container.replaceChildren();
+  renderNextBatch();
 }
 
 async function fetchRepositories() {
@@ -105,4 +113,5 @@ async function fetchRepositories() {
 }
 
 elements.loadMore.addEventListener("click", renderNextBatch);
+elements.showLess.addEventListener("click", renderInitialBatch);
 fetchRepositories();
